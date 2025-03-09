@@ -1,146 +1,90 @@
-# 📝 Documentação da API - Guia para Iniciantes 🚀
+# Documentação das Endpoints
 
-Bem-vindo! Esta documentação interativa vai te ajudar a usar a nossa API de forma fácil e rápida! 😎🔄
-
-## ✨ Como funciona?
-Nossa API permite acessar diversas informações usando requisições HTTP GET.
-
-### 🔑 Autenticação
-Todas as requisições precisam de um **token**. Ele deve ser passado na URL conforme os exemplos abaixo.
-
-## 🛠️ Endpoints Disponíveis
-
-### 👨‍👩‍👦 Consulta por CPF
-**Rota:**
-```
-GET /token/{token}/cpf/{valor}
-```
-**Uso:** Recupera informações associadas a um CPF.
-
-### 📧 Consulta por Email
-**Rota:**
-```
-GET /token/{token}/email/{valor}
-```
-**Uso:** Busca dados relacionados a um email.
-
-### 📞 Consulta por Telefone
-**Rota:**
-```
-GET /token/{token}/telefone/{valor}
-```
-**Uso:** Recupera informações de um telefone.
-
-### 🔖 Consulta por CNH
-**Rota:**
-```
-GET /token/{token}/cnh/{valor}
-```
-**Uso:** Obtém dados de uma CNH.
-
-### 📈 Consulta de Poder Social
-**Rota:**
-```
-GET /token/{token}/poder_social/{valor}
-```
-**Uso:** Verifica informações de poder social.
-
-### 👨‍⚕️ Consulta Médico por CPF
-**Rota:**
-```
-GET /token/{token}/medico_cpf/{valor}
-```
-**Uso:** Busca dados médicos pelo CPF.
-
-### 🗳️ Consulta Eleitoral
-**Rota:**
-```
-GET /token/{token}/eleicao/{valor}
-```
-**Uso:** Exibe informações sobre registros eleitorais.
-
-### 💰 Consulta de Renda
-**Rota:**
-```
-GET /token/{token}/renda/{valor}
-```
-**Uso:** Mostra estimativas de renda associadas ao CPF.
-
-## 💻 Rotas Específicas Credlink
-
-### 📧 Consulta de Email Credi
-**Rota:**
-```
-GET /token/{token}/email_credi/{valor}
-```
-**Uso:** Verifica informações de email vinculadas ao Credlink.
-
-### 👨‍�‍� Consulta CPF 3
-**Rota:**
-```
-GET /token/{token}/cpf3/{valor}
-```
-**Uso:** Outra forma de buscar informações por CPF.
-
-### 🌐 Consulta Pix Detetive
-**Rota:**
-```
-GET /token/{token}/pix/nome/{nome}/cpf/{cpf}
-```
-**Uso:** Obtém informações de um Pix vinculado ao CPF e nome.
-
-## 🏘️ Banco de Dados SP
-
-### 🎬 Foto SP
-**Rota:**
-```
-GET /token/{token}/foto_sp/{valor}
-```
-**Uso:** Busca imagens relacionadas a um CPF no banco de dados de SP.
-
-### 📺 Foto CE
-**Rota:**
-```
-GET /token/{token}/foto_ce/{valor}
-```
-**Uso:** Busca imagens no banco de dados do CE.
-
-### 📸 Foto MA
-**Rota:**
-```
-GET /token/{token}/foto_ma/{valor}
-```
-**Uso:** Busca imagens no banco de dados do MA.
-
-## 🛠️ Outras Rotas Auxiliares
-
-### 👤 Obter ID
-**Rota:**
-```
-GET /getid/{valor}
-```
-**Uso:** Retorna o ID correspondente ao valor informado.
-
-### 🧑‍🎭 Reconhecimento Facial
-**Rota:**
-```
-GET /reco_facial/{token}
-```
-**Uso:** Executa reconhecimento facial com base no token fornecido.
-
-### 🔑 Gerar Token
-**Rota:**
-```
-GET /token/{token}/gerar_token/{dia}/{mes}/{ano}
-```
-**Uso:** Gera um novo token com base na data informada.
+Este repositório contém a documentação das endpoints do sistema Flask. As rotas estão organizadas em categorias para facilitar a consulta.
 
 ---
 
-### 💡 Dicas Finais
-✅ Substitua `{token}` pelo seu token de acesso.
-✅ Substitua `{valor}` pelo dado que deseja consultar.
-✅ Use **https://** para fazer as requisições corretamente.
+## Rotas Gerais
+- **`/token/<token>/cpf/<valor>`**  
+  _Desativada._
 
-**Agora é só testar e aproveitar a API!** 🚀🛠️
+- **`/token/<token>/email/<valor>`**  
+  _Desativada._
 
+- **`/token/<token>/email_cpf/<valor>`**  
+  Processa informações combinadas de email e CPF.
+
+- **`/token/<token>/telefone/<valor>`**  
+  Consulta ou manipula informações relacionadas a um número de telefone.
+
+- **`/token/<token>/cnh/<valor>`**  
+  Processa dados relacionados a CNHs (Carteiras Nacionais de Habilitação).
+
+- **`/token/<token>/cnh_modulo2/<valor>`**  
+  Função específica para manipulação do módulo 2 de CNHs.
+
+- **`/token/<token>/poder_social/<valor>`**  
+  Endpoint para dados de influência ou poder social.
+
+- **`/token/<token>/basiccpf/<valor>`**  
+  Processamento básico com CPF.
+
+- **`/token/<token>/medico_cpf/<valor>`**  
+  Consulta dados médicos associados a um CPF.
+
+- **`/token/<token>/eleicao/<valor>`**  
+  Obtém informações relacionadas a dados de eleição.
+
+- **`/token/<token>/renda/<valor>`**  
+  Consultas ou estimativas de renda com base no CPF.
+
+- **`/token/<token>/cpf2/<valor>`**  
+  Consulta complementar ou adicional para CPF.
+
+---
+
+## Rotas Específicas Credlink
+- **`/token/<token>/email_credi/<valor>`**  
+  Processa informações específicas de emails do Credlink.
+
+- **`/token/<token>/tel_cred/<valor>`**  
+  Dados telefônicos específicos do Credlink.
+
+- **`/token/<token>/cpf3/<valor>`**  
+  Terceiro nível de processamento de CPF.
+
+- **`/token/<token>/pix/nome/<nome>/cpf/<cpf>`**  
+  Consultas relacionadas ao Pix combinando nome e CPF.
+
+---
+
+## Rotas Db SP
+- **`/token/<token>/foto_sp/<valor>`**  
+  Dados de fotos para o banco de SP.
+
+- **`/token/<token>/foto_ce/<valor>`**  
+  Processamento de fotos para o banco do CE.
+
+- **`/token/<token>/foto_ma/<valor>`**  
+  Dados de fotos para o banco do MA.
+
+---
+
+## Rotas Auxiliares
+- **`/getid/<valor>`**  
+  Obtém IDs com base no valor fornecido.
+
+- **`/reco_facial/<token>`**  
+  Realiza reconhecimento facial com o token.
+
+- **`/token/<token>/gerar_token/<int:dia>/<int:mes>/<int:ano>`**  
+  Gera um novo token baseado em uma data específica.
+
+---
+
+### **Como Usar**
+Para cada endpoint, substitua os parâmetros `<token>`, `<valor>`, `<nome>`, `<cpf>`, `<dia>`, `<mes>` e `<ano>` pelos valores apropriados ao seu caso de uso.
+
+---
+
+Fique à vontade para adaptar ou adicionar mais informações! 🚀
