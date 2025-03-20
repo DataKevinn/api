@@ -1,0 +1,5 @@
+DB_PATH = "D:\\SERASA.DB"
+DB_CEARA = "E:\\dump_ce\\dados_01.db"
+DB_CRED = "F:\\api\\credilink.db"
+DB_MA = "E:\\FOTO_MA.db"
+DB_RO = "E:\\FOTO_RO.db"
